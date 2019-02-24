@@ -8,6 +8,10 @@ public class UserService {
     @Inject
     private UserDao mUserDao;
 
+    public UserService() {
+        System.out.println(" UserService Construct ");
+    }
+
     public void say() {
         mUserDao.say();
     }

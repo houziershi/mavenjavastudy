@@ -16,6 +16,6 @@ public class MyResponse {
     }
 
     public void setResponseDiscription(String responseDis) {
-        this.responseDiscription = this.responseDiscription +"  "+ responseDis;
+        this.responseDiscription = this.responseDiscription + "  " + responseDis;
     }
 }

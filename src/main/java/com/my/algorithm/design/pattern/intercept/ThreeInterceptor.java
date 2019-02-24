@@ -15,10 +15,10 @@ public final class ThreeInterceptor implements Interceptor {
     public MyResponse intercept(Chain chain) throws IOException {
         MyRequest myRequest = chain.request();
         myRequest.setRequestdiscription(threeRequest);
-        System.out.println("three interceptor ------------request====="+myRequest.getRequestdiscription());
+        System.out.println("three interceptor ------------request=====" + myRequest.getRequestdiscription());
 
         MyResponse myResponse = new MyResponse("threeResponse ");
-        System.out.println("three interceptor ------------response ======"+myResponse.getResponseDiscription());
+        System.out.println("three interceptor ------------response ======" + myResponse.getResponseDiscription());
         return myResponse;
     }
 }

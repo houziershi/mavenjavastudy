@@ -10,6 +10,10 @@ import com.google.inject.Singleton;
  */
 @Singleton
 public class UserDao {
+    public UserDao() {
+        System.out.println("UserDao construct");
+    }
+
     public void say(){
         System.out.println("Dao is saying");
     }
