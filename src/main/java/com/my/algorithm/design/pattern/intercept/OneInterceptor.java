@@ -15,11 +15,11 @@ public final class OneInterceptor implements Interceptor {
     public MyResponse intercept(Chain chain) throws IOException {
         MyRequest myRequest = chain.request();
         myRequest.setRequestdiscription(oneRequest);
-        System.out.println("one interceptor --------------request===="+myRequest.getRequestdiscription());
+        System.out.println("one interceptor --------------request====" + myRequest.getRequestdiscription());
 
         MyResponse myResponse = chain.proceed(myRequest);
         myResponse.setResponseDiscription(oneResponse);
-        System.out.println("one interceptor -----------------response======="+myResponse.getResponseDiscription());
+        System.out.println("one interceptor -----------------response=======" + myResponse.getResponseDiscription());
         return myResponse;
     }
 }

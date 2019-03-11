@@ -15,19 +15,20 @@ public final class TwoInterceptor implements Interceptor {
     public MyResponse intercept(Chain chain) throws IOException {
         MyRequest myRequest = chain.request();
         myRequest.setRequestdiscription(twoRequest);
-        System.out.println("two interceptor-----------request======="+myRequest.getRequestdiscription());
+        System.out.println("two interceptor-----------request=======" + myRequest.getRequestdiscription());
 
         MyResponse myResponse = chain.proceed(myRequest);
 //        MyResponse myResponse = testFor(null, chain);
-        System.out.println("two interceptor---------response==="+myResponse.getResponseDiscription());
+        myResponse.setResponseDiscription(twoResponse);
+        System.out.println("two interceptor---------response===" + myResponse.getResponseDiscription());
         return myResponse;
     }
 
     private MyResponse testFor(MyResponse myResponse, Chain chain) throws IOException {
         MyRequest myRequest = chain.request();
         MyResponse response = null;
-        for (int i=0;i<2;i++) {
-            MyRequest myRequest1 = new MyRequest(myRequest+"----"+i+"    "+myRequest.getRequestdiscription());
+        for (int i = 0; i < 2; i++) {
+            MyRequest myRequest1 = new MyRequest(myRequest + "----" + i + "    " + myRequest.getRequestdiscription());
             response = chain.proceed(myRequest1);
         }
 

@@ -4,11 +4,9 @@ package com.my.algorithm.design.pattern.intercept;
  * Description: 模仿OkHttp Interceptor 责任链设计模式
  */
 
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
 
 public final class MyInterceptorChain implements Interceptor.Chain {
     private final List<Interceptor> interceptors;
@@ -24,63 +22,9 @@ public final class MyInterceptorChain implements Interceptor.Chain {
 
     public static void main(String[] args) {
 
-        MyClass myClass = new MyClass();
-
-        ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
-        ExecutorService executorService = new ThreadPoolExecutor(5, 10, 0L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingDeque<Runnable>(1024), threadFactory, new ThreadPoolExecutor.AbortPolicy());
-
-        executorService.execute(() -> {
-            try {
-                myClass.myThrowMethod();
-            } catch (Exception e) {
-                System.out.println("my exception====方法1======" + e);
-            }
-        });
-        executorService.shutdown();
-
-        /*
-        try {
-            executorService.execute(() -> myClass.myThrowMethod());
-        } catch (Exception e) {
-            System.out.println("my exception====方法2======" + e);
-        }
-        executorService.shutdown();
-
-        try {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    myClass.myThrowMethod();
-                }
-            }).start();
-        } catch (Exception e) {
-            System.out.println("my exception====方法3======" + e);
-        }*/
-
-        /*Future<String> future =  executorService.submit(new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                myClass.myThrowMethod();
-                return "success";
-            }
-        });
-
-        try {
-            System.out.println(future.get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }*/
-
-
-//        testThrowMethod();
-        System.out.println("main enter");
-//        executorService.shutdown();
-        /*OneInterceptor oneInterceptor = new OneInterceptor("one Request", "one response");
-        TwoInterceptor twoInterceptor = new TwoInterceptor("two request", "two response");
-        ThreeInterceptor threeInterceptor = new ThreeInterceptor("three request", " three response");
+        OneInterceptor oneInterceptor = new OneInterceptor("one_Request", "one_response");
+        TwoInterceptor twoInterceptor = new TwoInterceptor("two_request", "two_response");
+        ThreeInterceptor threeInterceptor = new ThreeInterceptor("three_request", " three_response");
         final List<Interceptor> interceptors = new ArrayList<>();
         interceptors.add(oneInterceptor);
         interceptors.add(twoInterceptor);
@@ -92,12 +36,9 @@ public final class MyInterceptorChain implements Interceptor.Chain {
             System.out.println(myInterceptorChain.proceed(mainRequest).getResponseDiscription());
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
-    public static void testThrowMethod() {
-        throw new NullPointerException();
-    }
 
     @Override
     public MyRequest request() {
