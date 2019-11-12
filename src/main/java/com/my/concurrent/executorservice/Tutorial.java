@@ -72,7 +72,7 @@ public class Tutorial {
         set.add(p2);
         set.add(p3);
         System.out.println("总共有:"+set.size()+" 个元素!"); //结果：总共有:3 个元素!
-        p3.setAge(2); //修改p3的年龄,此时p3元素对应的hashcode值发生改变
+        p3.setAge(2); //修改p3的年龄,此时p3元素对应的hashcode值发生改变。ps：必须重写hashcode方法和equals方法
 
         set.remove(p3); //此时remove不掉，造成内存泄漏
 

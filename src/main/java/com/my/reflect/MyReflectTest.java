@@ -2,6 +2,7 @@ package com.my.reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 
 /**
  * Discription:
@@ -10,6 +11,11 @@ import java.lang.reflect.Method;
 public class MyReflectTest {
 
     public static void main(String[] args) {
+        ArrayList<Integer> integers = new ArrayList<>();
+        integers.add(null);
+        Integer integer = integers.get(0);
+        System.out.println(integer);
+
         MyReflect myReflect = new MyReflect();
         Class<?> myClass = myReflect.getClass();
         try {
