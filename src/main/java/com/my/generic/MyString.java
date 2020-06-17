@@ -26,6 +26,12 @@ public class MyString {
     }
 
     public static void main(String[] args) {
-        System.out.println(normalize("//hgk/ou/print//in/"));
+//        System.out.println(normalize("//hgk/ou/print//in/"));
+        int a = 0x1;
+        int b = 0x1;
+        if (a == b) {
+            System.out.println("equal");
+        }
+
     }
 }

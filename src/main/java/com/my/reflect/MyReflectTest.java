@@ -37,9 +37,11 @@ public class MyReflectTest {
         try {
             Method setParameter = myClass.getDeclaredMethod("getParameter");
             setParameter.setAccessible(true);
-            System.out.println("getParameter  parameter =="+setParameter.invoke(myReflect));
+            System.out.println("getParameter  parameter ==" + setParameter.invoke(myReflect));
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        System.out.println("0.1+0.2==============" + (0.1 + 0.2));
     }
 }
