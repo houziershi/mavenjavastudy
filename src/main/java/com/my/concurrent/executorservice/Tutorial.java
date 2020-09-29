@@ -46,7 +46,7 @@ public class Tutorial {
 
     public static void main(String[] args) {
 
-        /*singleThread(() ->
+        singleThread(() ->
                 System.out.println("single thread========" + Thread.currentThread().getName()));
 
 
@@ -58,9 +58,9 @@ public class Tutorial {
         for (int i = 0; i < 10; i++) {
             executorService.execute(() -> System.out.println("newCachedThreadPool thread========" + Thread.currentThread().getName()));
         }
-        executorService.shutdown();*/
+        executorService.shutdown();
 
-        testHashMap();
+//        testHashMap();
     }
 
     public static void testHashMap() {

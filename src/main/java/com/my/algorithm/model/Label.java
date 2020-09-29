@@ -47,6 +47,6 @@ public class Label {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return 12;
     }
 }
