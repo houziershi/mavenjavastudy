@@ -1,4 +1,4 @@
-package com.my.algorithm.design.pattern.proxy;
+package com.my.algorithm.design.pattern.proxy.dynamic;
 
 public class SmsServiceImpl implements SmsService {
     @Override
@@ -6,4 +6,6 @@ public class SmsServiceImpl implements SmsService {
         System.out.println("send message: " + message);
         return message;
     }
+
+
 }
