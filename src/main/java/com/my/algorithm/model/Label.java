@@ -1,7 +1,5 @@
 package com.my.algorithm.model;
 
-import com.google.common.base.Objects;
-
 public class Label {
     private long id;
     private int move;
