@@ -50,10 +50,15 @@ public class CachedFactorizer implements Runnable {
     }
 
     public static void main(String[] args) {
-        CachedFactorizer cachedFactorizer1 = new CachedFactorizer();
-        CachedFactorizer cachedFactorizer2 = new CachedFactorizer();
+//        CachedFactorizer cachedFactorizer1 = new CachedFactorizer();
+//        CachedFactorizer cachedFactorizer2 = new CachedFactorizer();
+//
+//        new Thread(cachedFactorizer1).start();
+//        new Thread(cachedFactorizer2).start();
 
-        new Thread(cachedFactorizer1).start();
-        new Thread(cachedFactorizer2).start();
+        for (int i = 0; i < 100; i++) {
+            CachedFactorizer cachedFactorizer = new CachedFactorizer();
+            new Thread(cachedFactorizer).start();
+        }
     }
 }
