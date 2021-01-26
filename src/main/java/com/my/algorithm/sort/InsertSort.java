@@ -13,6 +13,15 @@ public class InsertSort {
         }
     }
 
+    public void method(int[] A) {
+        int divide = 0;
+        for (int i = 1; i < A.length; i++) {
+            if (A[i] > 0) {
+                divide++;
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         int[] A = new int[]{
