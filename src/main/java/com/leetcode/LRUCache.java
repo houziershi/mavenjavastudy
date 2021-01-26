@@ -49,7 +49,7 @@ public class LRUCache {
     }
 
     // This method works in O(1)
-    public void get(int key, int value) {
+    public void put(int key, int value) {
         if (map.get(key) != null) {
             Node node = map.get(key);
             node.value = value;
@@ -67,7 +67,6 @@ public class LRUCache {
             addNodeHead(node);
         }
     }
-
 
     class Node {
         int key;
