@@ -1,9 +1,6 @@
 package com.my;
 
 
-import java.util.LinkedList;
-import java.util.Stack;
-
 public class TestAccount {
 
     public static void method(int[] A) {
@@ -34,10 +31,7 @@ public class TestAccount {
                 1, 9, 5, 45, -9, -1
         };
 
-
         method(A);
         System.out.println();
-
-        LinkedList<Integer> list = new LinkedList();
     }
 }
